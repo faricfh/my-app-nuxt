@@ -1,4 +1,6 @@
-export default {
+const withSass = require('@zeit/next-sass')
+
+module.exports = withSass({
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'my-app-nuxt',
@@ -11,12 +13,14 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/scss/app.scss',
+    '@/assets/css/import.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -37,4 +41,4 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
-}
+})

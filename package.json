@@ -9,7 +9,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "admin-lte": "^3.1.0-rc",
     "core-js": "^3.8.3",
+    "node-sass": "^5.0.0",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {}
