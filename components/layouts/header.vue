@@ -13,7 +13,15 @@
         >
           Home
         </NuxtLink>
+      </li>
 
+      <li class="nav-item d-none d-sm-inline-block">
+        <NuxtLink
+          class="nav-link"
+          to="/login"
+        >
+          Login
+        </NuxtLink>
       </li>
     </ul>
 

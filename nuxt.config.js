@@ -23,6 +23,8 @@ module.exports = withSass({
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/app.scss',
+    '@/assets/css/login-adminlte.css',
+    'admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

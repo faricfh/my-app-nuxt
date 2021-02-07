@@ -39,6 +39,12 @@
       'app-sidebar': Sidebar,
       'app-header': Header,
       'app-footer': Footer,
+    },
+
+    head: {
+      bodyAttrs: {
+        class: 'hold-transition sidebar-mini layout-fixed'
+      }
     }
   }
 </script>

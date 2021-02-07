@@ -65,7 +65,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  layouts: 'default',
+}
 </script>
 
 <style>
