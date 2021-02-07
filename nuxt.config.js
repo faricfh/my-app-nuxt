@@ -16,7 +16,7 @@ module.exports = withSass({
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
     script: [
-      { scr: '@/assets/js/app.js' },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' }
     ],
   },
 
