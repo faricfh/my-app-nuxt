@@ -1,24 +1,23 @@
 <template>
   <div>
     <div class="login-logo">
-      <a><b>Admin</b>LTE</a>
+      <a>NAMA APLIKASI</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
-
+        <p class="login-box-msg">Masukan Nama Pengguna dan Kata Sandi</p>
         <form>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="text" class="form-control" placeholder="Username" v-model="username">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class="fas fa-user"></span>
               </div>
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password" v-model="password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -36,7 +35,7 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+              <a class="btn btn-primary btn-block" @click="onSubmit()">Log In</a>
             </div>
             <!-- /.col -->
           </div>
@@ -48,7 +47,31 @@
 </template>
 
 <script>
+
+import axios from 'axios';
+import Vue from 'vue';
+
 export default {
-  layout: 'login/main'
+  layout: 'login/main',
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+  methods: {
+    async onSubmit() {
+      let url = "http://192.168.1.8/laravel-7/public/api/site/login";
+
+      await axios.post(url,{
+        username: this.username,
+        password: this.password,
+      }).then(response => {
+          console.log(response.data);
+      }).catch(error => {
+          console.log(error.response);
+      });
+    }
+  }
 }
 </script>
