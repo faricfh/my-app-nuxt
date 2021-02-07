@@ -14,13 +14,15 @@ module.exports = withSass({
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ]
+    ],
+    script: [
+      { scr: '@/assets/js/app.js' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/app.scss',
-    '@/assets/css/import.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
