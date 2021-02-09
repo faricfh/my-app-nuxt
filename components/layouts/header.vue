@@ -28,11 +28,22 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link">
-          <i class="fas fa-th-large"></i>
+        <a class="nav-link" href="javascript:void(0)" @click="onLogout()">
+          <i class="fas fa-power-off"></i>
         </a>
       </li>
     </ul>
   </nav>
   <!-- /.navbar -->
 </template>
+
+<script>
+  export default{
+    methods: {
+      async onLogout() {
+        await this.$auth.logout()
+        this.$router.push('/login')
+      },
+    }
+  }
+</script>

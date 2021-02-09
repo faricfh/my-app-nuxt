@@ -41,9 +41,32 @@ module.exports = withSass({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/site/login', method: 'post', propertyName: 'data' },
+          logout: false,
+          user: false,
+        },
+        // tokenRequired: true,
+        // tokenType: 'Bearer '
+      }
+    }
+  },
+
+  axios: {
+    baseURL: 'http://192.168.1.8/laravel-7/public'
+  },
+
+  router: {
+    middleware: ['auth']
+  },
 })

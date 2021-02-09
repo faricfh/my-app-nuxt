@@ -45,6 +45,7 @@
       bodyAttrs: {
         class: 'hold-transition sidebar-mini layout-fixed'
       }
-    }
+    },
   }
+
 </script>

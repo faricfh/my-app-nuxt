@@ -52,6 +52,7 @@ import axios from 'axios';
 import Vue from 'vue';
 
 export default {
+  auth: false,
   layout: 'login/main',
   data() {
     return {
@@ -67,7 +68,11 @@ export default {
         username: this.username,
         password: this.password,
       }).then(response => {
-          console.log(response.data);
+          if(response.data.status == true) {
+            this.$auth.loginWith('local').then((data) => {
+              this.$router.push('/')
+            })
+          }
       }).catch(error => {
           console.log(error.response);
       });
