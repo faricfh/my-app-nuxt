@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     async onSubmit() {
-      let url = "http://192.168.1.8/laravel-7/public/api/site/login";
+      let url = "http://localhost/laravel-7/public/api/site/login";
 
       await axios.post(url,{
         username: this.username,

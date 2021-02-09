@@ -63,7 +63,7 @@ module.exports = withSass({
   },
 
   axios: {
-    baseURL: 'http://192.168.1.8/laravel-7/public'
+    baseURL: 'http://localhost/laravel-7/public'
   },
 
   router: {
